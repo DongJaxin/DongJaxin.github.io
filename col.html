@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>阅后即焚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	 
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	 
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+	@property --rotate {
+	  syntax: "<angle>";
+	  initial-value: 132deg;
+	  inherits: false;
+	}
+
+	:root {
+	  --card-height: 10vh;
+	  --card-width: calc(var(--card-height) / 1);
+	}
+
+
+	body {
+	  min-height: 100vh;
+	  background: #212534;
+	  display: flex;
+	  align-items: center;
+	  flex-direction: column;
+	  padding-top: 2rem;
+	  padding-bottom: 2rem;
+	  box-sizing: border-box;
+	}
+
+
+	.card {
+	  background: #191c29;
+	  width: var(--card-width);
+	  height: var(--card-height);
+	  padding: 3px;
+	  position: relative;
+	  border-radius: 6px;
+	  justify-content: center;
+	  align-items: center;
+	  text-align: center;
+	  display: flex;
+	  font-size: 1.5em;
+	  color: rgb(88 199 250 / 0%);
+	  cursor: pointer;
+	  font-family: cursive;
+	}
+
+	.card:hover {
+	  color: rgb(88 199 250 / 100%);
+	  transition: color 1s;
+	}
+	.card:hover:before, .card:hover:after {
+	  animation: none;
+	  opacity: 0;
+	}
+
+
+	.card::before {
+	  content: "";
+	  width: 104%;
+	  height: 102%;
+	  border-radius: 8px;
+	  background-image: linear-gradient(
+		var(--rotate)
+		, #5ddcff, #3c67e3 43%, #4e00c2);
+		position: absolute;
+		z-index: -1;
+		top: -1%;
+		left: -2%;
+		animation: spin 2.5s linear infinite;
+	}
+
+	.card::after {
+	  position: absolute;
+	  content: "";
+	  top: calc(var(--card-height) / 6);
+	  left: 0;
+	  right: 0;
+	  z-index: -1;
+	  height: 100%;
+	  width: 100%;
+	  margin: 0 auto;
+	  transform: scale(0.8);
+	  filter: blur(calc(var(--card-height) / 6));
+	  background-image: linear-gradient(
+		var(--rotate)
+		, #5ddcff, #3c67e3 43%, #4e00c2);
+		opacity: 1;
+	  transition: opacity .5s;
+	  animation: spin 2.5s linear infinite;
+	}
+
+	@keyframes spin {
+	  0% {
+		--rotate: 0deg;
+	  }
+	  100% {
+		--rotate: 360deg;
+	  }
+	}
+
+
+  </style>
+ </head>
+ <body>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-1" style="">
+	 <div class="card">
+		Do
+	  </div>
+    </div>
+    <div class="col-md-1" style="">
+	 <div class="card">
+	    Really
+	  </div>
+    </div>
+    <div class="col-md-1" style="">
+	 <div class="card">
+		Care
+	  </div>
+    </div>
+    <div class="col-md-1" style="">
+	 <div class="card">
+	    About
+	  </div>
+    </div>
+    <div class="col-md-1" style="">
+	 <div class="card">
+		You
+	  </div>
+    </div>
+    <div class="col-md-1" style="">
+	 <div class="card">
+	    !
+	  </div>
+    </div>
+  </div>
+</div>
+ </body>
+</html>
